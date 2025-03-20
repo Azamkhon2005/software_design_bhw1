@@ -22,6 +22,7 @@ dotnet build
 ### 3. Запуск
 ```bash
 dotnet run --project IHW_1
+```
 
 ## Реализованный функционал:
 
