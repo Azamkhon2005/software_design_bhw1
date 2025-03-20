@@ -73,21 +73,21 @@ p.s Для работы контейнера необходимо установ
 
 - Каждый класс имеет одну четко определенную ответственность.
 
-        Account: Управление данными счета (имя, баланс, ID).
+  Account: Управление данными счета (имя, баланс, ID).
         
-        AccountService: Бизнес-логика для управления счетами (добавление, удаление, изменение).
+  AccountService: Бизнес-логика для управления счетами (добавление, удаление, изменение).
         
-        Category, CategoryService: Аналогично для категорий.
+  Category, CategoryService: Аналогично для категорий.
         
-        Operation, OperationService: Аналогично для операций.
+  Operation, OperationService: Аналогично для операций.
         
-        *Facade (AccountFacade, CategoryFacade, OperationFacade, AnalyticFacade): Предоставляет высокоуровневый интерфейс для работы с соответствующими сервисами.
+  *Facade (AccountFacade, CategoryFacade, OperationFacade, AnalyticFacade): Предоставляет высокоуровневый интерфейс для работы с соответствующими сервисами.
         
-        *Command классы: Инкапсулируют отдельные действия (команды) над объектами.
+  *Command классы: Инкапсулируют отдельные действия (команды) над объектами.
         
-        *Importer, *ExportVisitor: Реализации для импорта и экспорта в разных форматах.
+  *Importer, *ExportVisitor: Реализации для импорта и экспорта в разных форматах.
         
-        AnaliticService: Бизнес-логика для выполнения аналитических запросов.
+  AnaliticService: Бизнес-логика для выполнения аналитических запросов.
 
 ## Open/Closed Principle (OCP):
 
@@ -107,11 +107,11 @@ p.s Для работы контейнера необходимо установ
 
 - Использовано несколько интерфейсов вместо одного "толстого":
         
-        ICommand: Общий интерфейс для всех команд.
+  ICommand: Общий интерфейс для всех команд.
         
-        IAccountCommandFactory, ICategoryCommandFactory, IOperationCommandFactory: Раздельные фабрики команд для счетов, категорий и операций.
+  IAccountCommandFactory, ICategoryCommandFactory, IOperationCommandFactory: Раздельные фабрики команд для счетов, категорий и операций.
         
-        IExportVisitor<T>: Для экспорта данных.
+  IExportVisitor<T>: Для экспорта данных.
 
 ## Dependency Inversion Principle (DIP):
 
