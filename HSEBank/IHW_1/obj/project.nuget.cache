@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "0Mg3lQy82uN2awNu78m7P4VRePLIZ7Il6L7fhY3EGUDw7eDbo2+kMre2dULFnOmhRkLHR97mPGN2kBLo6+P7hw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\abuzu\\source\\repos\\HSEBank\\IHW_1\\IHW_1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\abuzu\\.nuget\\packages\\csvhelper\\33.0.1\\csvhelper.33.0.1.nupkg.sha512",
+    "C:\\Users\\abuzu\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\9.0.3\\microsoft.extensions.dependencyinjection.9.0.3.nupkg.sha512",
+    "C:\\Users\\abuzu\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.3\\microsoft.extensions.dependencyinjection.abstractions.9.0.3.nupkg.sha512",
+    "C:\\Users\\abuzu\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\abuzu\\.nuget\\packages\\yamldotnet\\16.3.0\\yamldotnet.16.3.0.nupkg.sha512"
+  ],
+  "logs": []
+}
