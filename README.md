@@ -66,3 +66,61 @@ p.s Для работы контейнера необходимо установ
     Измерение времени выполнения каждой команды.
     
     Сохранение и вывод средней продолжительности выполнения команд по сценариям.
+
+### Принципы SOLID:
+
+## Single Responsibility Principle (SRP):
+
+- Каждый класс имеет одну четко определенную ответственность.
+
+        Account: Управление данными счета (имя, баланс, ID).
+        
+        AccountService: Бизнес-логика для управления счетами (добавление, удаление, изменение).
+        
+        Category, CategoryService: Аналогично для категорий.
+        
+        Operation, OperationService: Аналогично для операций.
+        
+        *Facade (AccountFacade, CategoryFacade, OperationFacade, AnalyticFacade): Предоставляет высокоуровневый интерфейс для работы с соответствующими сервисами.
+        
+        *Command классы: Инкапсулируют отдельные действия (команды) над объектами.
+        
+        *Importer, *ExportVisitor: Реализации для импорта и экспорта в разных форматах.
+        
+        AnaliticService: Бизнес-логика для выполнения аналитических запросов.
+
+## Open/Closed Principle (OCP):
+
+- Классы импорта и экспорта данных (DataImporter<T>, IExportVisitor<T>) открыты для расширения (можно добавить новые форматы), но закрыты для изменения.
+
+- Классы команд (*Command) позволяют добавлять новые операции без изменения существующих сервисов.
+
+## Liskov Substitution Principle (LSP):
+
+- Базовый класс DataImporter<T> и его наследники (JsonImporter<T>, YamlImporter<T>, CsvImporter<T>) взаимозаменяемы.
+
+- Интерфейс IExportVisitor<T> и его реализации (JsonExportVisitor<T>, YamlExportVisitor<T>, CsvExportVisitor<T>) взаимозаменяемы.
+
+- Интерфейс ICommand и его реализации (*Command) взаимозаменяемы.
+
+## Interface Segregation Principle (ISP):
+
+- Использовано несколько интерфейсов вместо одного "толстого":
+        
+        ICommand: Общий интерфейс для всех команд.
+        
+        IAccountCommandFactory, ICategoryCommandFactory, IOperationCommandFactory: Раздельные фабрики команд для счетов, категорий и операций.
+        
+        IExportVisitor<T>: Для экспорта данных.
+
+## Dependency Inversion Principle (DIP):
+
+- Высокоуровневые модули (фасады) не зависят от низкоуровневых (сервисы). Используется инъекция зависимостей через конструкторы.
+
+        AccountFacade зависит от абстракций AccountService и IAccountCommandFactory, а не от конкретных реализаций.
+        
+        AnalyticFacade зависит от абстракции AnaliticService.
+
+- Аналогично для CategoryFacade и OperationFacade.
+
+        Сервисы (AccountService, CategoryService, OperationService) зависят от абстракции DataImporter<T> и IExportVisitor<T> для импорта/экспорта.
