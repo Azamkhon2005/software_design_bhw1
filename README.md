@@ -117,10 +117,10 @@ p.s Для работы контейнера необходимо установ
 
 - Высокоуровневые модули (фасады) не зависят от низкоуровневых (сервисы). Используется инъекция зависимостей через конструкторы.
 
-        AccountFacade зависит от абстракций AccountService и IAccountCommandFactory, а не от конкретных реализаций.
+  AccountFacade зависит от абстракций AccountService и IAccountCommandFactory, а не от конкретных реализаций.
         
-        AnalyticFacade зависит от абстракции AnaliticService.
+  AnalyticFacade зависит от абстракции AnaliticService.
 
 - Аналогично для CategoryFacade и OperationFacade.
 
-        Сервисы (AccountService, CategoryService, OperationService) зависят от абстракции DataImporter<T> и IExportVisitor<T> для импорта/экспорта.
+  Сервисы (AccountService, CategoryService, OperationService) зависят от абстракции DataImporter<T> и IExportVisitor<T> для импорта/экспорта.
