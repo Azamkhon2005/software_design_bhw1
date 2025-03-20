@@ -5,6 +5,24 @@ DI контейнер находится в статичном классе DICo
 
 p.s Для работы контейнера необходимо установить расширение Microsoft.Extensions.DependencyInjection.
 
+## Инструкция по запуску
+
+### 1. Требования
+- Установите [.NET 8 SDK](https://dotnet.microsoft.com/download).
+- Установите IDE (Visual Studio 2022/Rider/VSCode).
+- Установите расширение CsvHelper.
+- Установите расширение Microsoft.Extensions.DependencyInjection.
+- Установите расширение YamlDotNet.
+### 2. Сборка
+```bash
+dotnet restore
+dotnet build
+```
+
+### 3. Запуск
+```bash
+dotnet run --project IHW_1
+
 ## Реализованный функционал:
 
 - ### Управление счетами:
